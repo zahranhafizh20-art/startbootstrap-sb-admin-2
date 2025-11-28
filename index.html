@@ -24,48 +24,6 @@
 
 <body id="page-top">
 
-    <div>
-
-  <h3>Data Sensor Cuaca</h3>
-
-  <p id="cuaca">Memuat data...</p>
-
-</div>
-
-
-
-<script>
-
-  const apiKey = 'MASUKKAN_API_KEY_KAMU';
-
-  const city = 'Bandung';
-
-
-
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=city   appid={apiKey}&units=metric`)
-
-    .then(response => response.json())
-
-    .then(data => {
-
-      const suhu = data.main.temp;
-
-      const kelembapan = data.main.humidity;
-
-      document.getElementById("cuaca").innerText =
-
-        `Suhu: suhu°C, Kelembapan:{kelembapan}%`;
-
-    })
-
-    .catch(error => {
-
-      document.getElementById("cuaca").innerText = "Gagal mengambil data.";
-
-    });
-
-</script>
-
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -795,6 +753,49 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
+    html
+
+<div>
+
+  <h3>Data Sensor Cuaca</h3>
+
+  <p id="cuaca">Memuat data...</p>
+
+</div>
+
+
+
+<script>
+
+  const apiKey = 'a8b4a03c8cfbb1c599a2612ee6894701';
+
+  const city = 'Depok';
+
+
+
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=city   appid={apiKey}&units=metric`)
+
+    .then(response => response.json())
+
+    .then(data => {
+
+      const suhu = data.main.temp;
+
+      const kelembapan = data.main.humidity;
+
+      document.getElementById("cuaca").innerText =
+
+        `Suhu: suhu°C, Kelembapan:{kelembapan}%`;
+
+    })
+
+    .catch(error => {
+
+      document.getElementById("cuaca").innerText = "Gagal mengambil data.";
+
+    });
+
+</script>
 
 </body>
 
